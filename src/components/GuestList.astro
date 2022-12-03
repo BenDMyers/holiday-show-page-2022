@@ -20,25 +20,23 @@ const bodyHTML = prismicH.asHTML(body);
     <h2 id="guests-heading">{heading}</h2>
   </header>
 
-  <main>
-    <Fragment set:html="bodyHTML" />
-    <div class="guest-grid">
-      {
-        allGuests.map((guest) => (
-          <article class="guest">
-            <GuestAvatar
-              avatar={guest.data.avatar}
-              guestName={guest.data.name}
-            />
-            <a class="name" accesskey="" href={`/guest/${guest.uid}`}>
-              {guest.data.name}
-            </a>
-            <span class="company">{guest.data.company}</span>
-          </article>
-        ))
-      }
-    </div>
-  </main>
+  <Fragment set:html="bodyHTML" />
+  <div class="guest-grid">
+    {
+      allGuests.map((guest) => (
+        <article class="guest">
+          <GuestAvatar
+            avatar={guest.data.avatar}
+            guestName={guest.data.name}
+          />
+          <a class="name" href={`/guest/${guest.uid}`}>
+            {guest.data.name}
+          </a>
+          <span class="company">{guest.data.company}</span>
+        </article>
+      ))
+    }
+  </div>
 </section>
 
 <style lang="scss">

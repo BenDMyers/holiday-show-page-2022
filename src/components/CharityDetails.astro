@@ -34,28 +34,26 @@ const bodyHTML = prismicH.asHTML(body)
 		<Fragment set:html='bodyHTML' />
 	</div>
 
-	<main>
-		<div class='footer-container'>
-			<p class='fundraiser-question'>
-				{questionText}{' '}
-				<span class='fundraiser-amount'>
-					{fundraiserAmount}
-				</span>
-			</p>
-			<div class='impact-container'>
-				{
-					items.map(({ number, text }) => (
-						<div class='impact-item'>
-							<p class='impact-text'>
-								<span class='impact-number'>{number}</span>
-								<span>{text}</span>
-							</p>
-						</div>
-					))
-				}
-			</div>
+	<div class='footer-container'>
+		<p class='fundraiser-question'>
+			{questionText}{' '}
+			<span class='fundraiser-amount'>
+				{fundraiserAmount}
+			</span>
+		</p>
+		<div class='impact-container'>
+			{
+				items.map(({ number, text }) => (
+					<div class='impact-item'>
+						<p class='impact-text'>
+							<span class='impact-number'>{number}</span>
+							<span>{text}</span>
+						</p>
+					</div>
+				))
+			}
 		</div>
-	</main>
+	</div>
 </section>
 
 <style>

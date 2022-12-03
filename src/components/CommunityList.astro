@@ -23,20 +23,18 @@ const bodyHTML = prismicH.asHTML(body)
 		<h2 id='communities-heading'>{heading}</h2>
 	</header>
 
-	<main>
-		<Fragment set:html='bodyHTML' />
-		<ul class='community-grid'>
-			{
-				communities.map(community => (
-					<li class='community'>
-						<a href={`/community/${community.uid}`}>
-							<img src={community.data.logo.url} alt={community.data.title} />
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</main>
+	<Fragment set:html='bodyHTML' />
+	<ul class='community-grid'>
+		{
+			communities.map(community => (
+				<li class='community'>
+					<a href={`/community/${community.uid}`}>
+						<img src={community.data.logo.url} alt={community.data.title} />
+					</a>
+				</li>
+			))
+		}
+	</ul>
 </section>
 
 <style lang='scss'>

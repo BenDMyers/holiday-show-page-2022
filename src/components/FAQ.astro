@@ -22,19 +22,17 @@ const faqItems = items.map(item => {
 		<span class='heading-eyebrow'>{eyebrow}</span>
 		<h2 id='faq-heading'>{heading}</h2>
 	</header>
-	<main>
-		<Fragment set:html='bodyHTML' />
-		<div class='items'>
-			{
-				faqItems.map(item => (
-					<details>
-						<summary>{item.heading}</summary>
-						<Fragment set:html='item.body' />
-					</details>
-				))
-			}
-		</div>
-	</main>
+	<Fragment set:html='bodyHTML' />
+	<div class='items'>
+		{
+			faqItems.map(item => (
+				<details>
+					<summary>{item.heading}</summary>
+					<Fragment set:html='item.body' />
+				</details>
+			))
+		}
+	</div>
 </section>
 
 <style lang='scss'>
