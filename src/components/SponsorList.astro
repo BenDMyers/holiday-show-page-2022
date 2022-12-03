@@ -18,20 +18,18 @@ const bodyHTML = prismicH.asHTML(body)
 		<h2 id='sponsors-heading'>{heading}</h2>
 	</header>
 
-	<main>
-		<Fragment set:html='bodyHTML' />
-		<ul class='sponsor-grid'>
-			{
-				sponsors.map(sponsor => (
-					<li class='sponsor'>
-						<a href={`/sponsor/${sponsor.uid}`}>
-							<img src={sponsor.data.logo.url} alt={sponsor.data.name} />
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</main>
+	<Fragment set:html='bodyHTML' />
+	<ul class='sponsor-grid'>
+		{
+			sponsors.map(sponsor => (
+				<li class='sponsor'>
+					<a href={`/sponsor/${sponsor.uid}`}>
+						<img src={sponsor.data.logo.url} alt={sponsor.data.name} />
+					</a>
+				</li>
+			))
+		}
+	</ul>
 </section>
 
 <style lang='scss'>
